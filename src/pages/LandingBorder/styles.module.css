@@ -1,0 +1,104 @@
+.container {
+  color: #fff;
+}
+
+.landing_counter_border {
+  --border-radius: 12px;
+  --border-size: 1px;
+  --padding: 1px;
+  --border-bg: conic-gradient(from 180deg at 50% 50%,
+      #e92a67 0deg,
+      #a853ba 112.5deg,
+      #2a8af6 228.75deg,
+      rgba(42, 138, 246, 0) 360deg);
+  position: relative;
+  overflow: hidden;
+  font-size: 2rem;
+  padding: calc(var(--padding) + var(--border-size));
+  border-radius: var(--border-radius);
+  display: inline-block;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translateZ(0);
+
+  width: 488px !important;
+  height: 352px;
+}
+
+.landing_counter_border i {
+  content: "";
+  position: absolute;
+  top: var(--border-size);
+  right: var(--border-size);
+  bottom: var(--border-size);
+  left: var(--border-size);
+  padding: var(--border-size);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  border-radius: calc(var(--border-radius) + var(--border-size));
+}
+
+.landing_counter_border i::before {
+  content: "";
+  display: block;
+  background: var(--border-bg);
+  box-shadow: 0 0 40px 20px --var(--border-bg);
+  width: calc(100% * 1.41421356237);
+  padding-bottom: calc(100% * 1.41421356237);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  z-index: -2;
+  animation: landing_spin__awkoQ 5s linear infinite;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #00000050;
+}
+
+.turborepoCardBg {
+  background: #000;
+  /* border: 1px solid hsla(0, 0%, 100%, .1); */
+  /* box-shadow: 0 20px 48px rgba(0, 0, 0, .2); */
+}
+
+.heading_container {
+  padding: 24px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.heading_container>*+* {
+  margin-top: 12px;
+}
+
+.heading_container h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.heading_container p {
+  color: #d7d7d7;
+  font-size: 24px;
+}
